@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ridhini Thiru | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f7f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e5e5e5;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #8b5e83;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #f7f1f5, #f4f6f8);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 12px;
+            letter-spacing: -2px;
+        }
+
+        .hero .subtitle {
+            font-size: 21px;
+            color: #777;
+            margin-bottom: 28px;
+        }
+
+        .hero .statement {
+            font-size: 22px;
+            line-height: 1.6;
+            color: #444;
+            margin: 0 auto 35px;
+            max-width: 780px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #8b5e83;
+        }
+
+        /* General Sections */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 45px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: -25px auto 40px;
+            color: #666;
+        }
+
+        /* About */
+
+        .about-box {
+            background: white;
+            padding: 40px;
+            border-radius: 14px;
+            border: 1px solid #e7e7e7;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .about-box p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Skills */
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 13px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #444;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+            transition: 0.2s;
+        }
+
+        .skill:hover {
+            transform: translateY(-3px);
+            border-color: #8b5e83;
+        }
+
+        /* Projects */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            min-height: 320px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            transition: 0.25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+        }
+
+        .project-number {
+            font-size: 13px;
+            font-weight: bold;
+            color: #8b5e83;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 15px;
+            flex-grow: 1;
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+            font-weight: 600;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #bbb;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 800px) {
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero .statement {
+                font-size: 18px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+        <div class="nav-name">Ridhini Thiru</div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero / Personal Statement -->
+
+    <header class="hero">
+        <div class="hero-content">
+
+            <h1>Ridhini Thiru</h1>
+
+            <p class="subtitle">
+                Business Analytics & Finance Student
+            </p>
+
+            <p class="statement">
+                I am a Business Analytics and Finance student at Rutgers University
+                interested in using data, technology, and finance to solve business
+                problems and create meaningful impact.
+            </p>
+
+            <a href="#projects" class="button">
+                View My Projects
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- Personal Statement -->
+
+    <section id="about">
+
+        <h2 class="section-title">Personal Statement</h2>
+
+        <div class="about-box">
+
+            <p>
+                I am a Business Analytics and Finance student at Rutgers University
+                interested in using data, technology, and finance to solve business
+                problems and create meaningful impact. I enjoy exploring how
+                analytical thinking and technology can be used to improve business
+                decisions and create innovative solutions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <p class="section-intro">
+            Skills and strengths that I bring to academic, professional, and
+            team-based projects.
+        </p>
+
+        <div class="skills-container">
+
+            <div class="skill">Python</div>
+            <div class="skill">Microsoft Excel</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Financial Analysis</div>
+            <div class="skill">Business Analytics</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Communication</div>
+            <div class="skill">Presentation</div>
+            <div class="skill">Teamwork</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <p class="section-intro">
+            A selection of projects that demonstrate my interests in business,
+            finance, technology, and analytics.
+        </p>
+
+
+        <div class="projects-grid">
+
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    Project 01
+                </div>
+
+                <h3>
+                    AI-Enabled CRM Accelerator
+                </h3>
+
+                <p>
+                    Developed an AI-powered CRM accelerator concept focused on
+                    improving sales productivity, streamlining lead capture,
+                    and adding an intelligence layer to existing CRM systems.
+                    The project explored how AI can support sales teams without
+                    replacing their existing CRM platforms.
+                </p>
+
+                <span class="project-tag">
+                    AI • CRM • Business Technology
+                </span>
+
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    Project 02
+                </div>
+
+                <h3>
+                    Goldman Sachs Internal Audit Simulation
+                </h3>
+
+                <p>
+                    Completed an internal audit simulation analyzing trading
+                    discrepancies, operational risks, and anti-money-laundering
+                    controls in a financial services environment. The project
+                    involved evaluating data and identifying potential areas
+                    of risk.
+                </p>
+
+                <span class="project-tag">
+                    Finance • Risk • Data Analysis
+                </span>
+
+            </div>
+
+
+            <!-- Project 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    Project 03
+                </div>
+
+                <h3>
+                    e.l.f. Beauty Equity Investment Analysis
+                </h3>
+
+                <p>
+                    Worked with a team through the Bender Trust and Little
+                    Investment Bank of Rutgers to analyze e.l.f. Beauty as a
+                    potential investment. Evaluated company performance,
+                    financial information, and peer valuation multiples before
+                    developing an investment recommendation and presenting
+                    findings to professionals.
+                </p>
+
+                <span class="project-tag">
+                    Finance • Investment Analysis • Valuation
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h2>Ridhini Thiru</h2>
+
+        <p>
+            Business Analytics & Finance | Rutgers University
+        </p>
+
+        <p style="margin-top: 15px;">
+            Personal Portfolio • 2026
+        </p>
+
+    </footer>
+
+</body>
+</html>
